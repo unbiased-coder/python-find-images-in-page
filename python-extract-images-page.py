@@ -3,10 +3,12 @@ import requests
 
 from bs4 import BeautifulSoup
 
-page = 'https://www.google.com'
+page = 'https://unbiased-coder.com'
 
 
 def download_image(url):
+    if ',' in url:
+        return
     if 'http' != url[:4]:
         turl = page + url
     else:
